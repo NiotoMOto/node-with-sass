@@ -1,0 +1,19 @@
+clone:
+  path: github.com/NiotoMOto/node-with-sass
+build:
+  image:  mhart/alpine-node:6.5.0
+  commands:
+    - apk upgrade --update
+  environment:
+    - DRONE_SERVER=http://drone.guillemoto.com
+    - DRONE_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0IjoiTmlvdG9NT3RvIiwidHlwZSI6InVzZXIifQ.vi7SAkP18ekP4UVsozthjJnJdCdyZMoOfXq-wyMj3yc
+
+publish:
+  docker:
+    registry: srv.guillemoto.com:5000
+    insecure: true
+    repo: drexlbob/wetty6
+    tag: latest
+    storage_driver: aufs
+    when:
+      event: commit
