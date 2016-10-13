@@ -12,8 +12,8 @@ publish:
   docker:
     registry: srv.guillemoto.com:5000
     insecure: true
-    repo: drexlbob/wetty6
+    repo: node-with-sass
     tag: latest
     storage_driver: aufs
     when:
-      event: commit
+      event: push
