@@ -14,5 +14,6 @@ publish:
     insecure: true
     repo: node-with-sass
     tag: latest
+    storage_driver: vfs
     when:
       event: push
